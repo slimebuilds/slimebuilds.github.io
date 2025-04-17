@@ -1,15 +1,46 @@
+html{
+	scroll-behavior: smooth;
+}
 body {
     background-color: #121212;
     color: white;
+	font-family: "Michroma", sans-serif;
+	font-weight: 400;
+  	font-style: normal;
   }
+.arrow {
+  box-sizing: border-box;
+  height: 5vw;
+  width: 5vw;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+/*  justify-content: center;*/
+  position:absolute;
+  bottom: 10%;
+  left: 47.5%;
+  right: 47.5%;
+  
+}
+
+.arrow:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
+#full {
+  height: 100vh;
+  background-color: #256347;
+}
   .hero {
     background-image: url('assets/fullback.png');
-    background-size: cover;
+    background-size: fill;
     background-position: center;
 	border: thick;
 	border-style: solid;
 	border-color: rgba(0,36,42,0.63);
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +49,18 @@ body {
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
   }
+  .hero-image {
+	position:absolute;
+	margin-left: auto;
+  	margin-right: auto;
+    z-index:0;
+	}
+  .hero-text {
+	position:absolute;
+	margin-left: auto;
+ 	margin-right: auto;
+    z-index:1;
+	}
   a, u { 
       text-decoration: none; 
     }  
