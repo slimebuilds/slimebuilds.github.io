@@ -96,7 +96,7 @@ body {
         color: white;
     }
   .p-4 {
-        color: white;
+      color: white;
       font-size: 0.8vw;
 	  background-color: rgba(33,37,41,0.6);
     }
@@ -104,10 +104,7 @@ body {
     background-color: rgba(33,37,41,0.6);
     border: none;
   }
-.events{
-	background-color: rgba(33,37,41,0.6);
-	border-radius: 8px;
-}
+
 
 .form-control{
 	background-color: rgba(255,255,255,0.45);
@@ -152,4 +149,5 @@ body {
 		.col-md-4 {
 			padding: 2%;
 		  }
+		
 	}
