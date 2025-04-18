@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="container py-5 bg-dark">
+  <div class="container py-5">	  
     <h2 class="text-center mb-4">Newest Arrivals</h2>
     <div class="row">
       <div class="col-md-4">
@@ -68,7 +68,7 @@
     </p>
   </div>
 
-  <div class="container py-5 bg-dark">
+  <div class="container py-5 events">
     <h2 class="text-center mb-4">Upcoming Events</h2>
     <ul class="list-unstyled text-center">
       <li>Monthly Showcase - May 2nd</li>
@@ -81,16 +81,24 @@
     <h2 class="text-center mb-4">Contact Us</h2>
     <form class="mx-auto" style="max-width: 600px;">
       <div class="mb-3">
-        <input type="text" class="form-control bg-dark text-white" placeholder="Your Name" />
+        <input type="text" class="form-control text-white" placeholder="Your Name" />
       </div>
       <div class="mb-3">
-        <input type="email" class="form-control bg-dark text-white" placeholder="Your Email" />
+        <input type="email" class="form-control text-white" placeholder="Your Email" />
       </div>
       <div class="mb-3">
-        <textarea class="form-control bg-dark" rows="4" placeholder="Your Message"></textarea>
+        <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
       </div>
       <button type="submit" class="btn btn-primary w-100">Send Message</button>
     </form>
   </div>
+	
+	<script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
 </body>
 </html>
