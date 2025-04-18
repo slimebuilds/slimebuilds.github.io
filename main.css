@@ -9,20 +9,38 @@ body {
 	font-weight: 400;
   	font-style: normal;
   }
+	
+	.navbar, .dropdown-menu {
+      background-color: #1f1f1f;	
+    }
+    .dropdown-item {
+      color: #fff;
+    }
+    .dropdown-item:hover {
+	  color: #fff;
+      background-color: rgba(33,37,41,1.0);
+    }
+	.benelogo {
+		max-width: 1.6%;
+		display: block;
+		margin-right: auto;
+	}
 
 .content {
 	display: none;
-	padding: 10px;
-	background-color: #1e1e1e;
+	padding: 1% 0 1% 0;
+	background-color: rgba(33,37,41,1);
 }
 
 .list-item {
 	cursor: pointer;
-	padding: 10px;
-	background-color: #1e1e1e;
+	padding: 1% 0 1% 0;
+	background-color: rgba(33,37,41,0.6);
 	text-align: center;
+	border-radius: 2%;
 /*	border: 1px solid #ccc;*/
-	margin-bottom: 5px;
+	margin-bottom: 1%;
+	margin-top: 1%;
   }
 
 .arrow {
@@ -41,7 +59,12 @@ body {
   
 }
 
-.arrow:hover {
+.arrow-cat {
+  display: none;
+  
+}
+
+.arrow:hover, .arrow-cat:hover {
   border-bottom-width: 4px;
   border-right-width: 4px;
 }
@@ -49,13 +72,9 @@ body {
   height: 100vh;
   background-color: #256347;
 }
-  .hero {
-    background-image: url('assets/fullback.png');
-    background-size: fill;
-    background-position: center;
-	border: thick;
-	border-style: solid;
-	border-color: rgba(0,36,42,0.63);
+  .hero {	
+    background-image: url('assets/benecar.jpg');
+    background-size: contain;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -65,16 +84,32 @@ body {
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
   }
+	.hero-category {	
+		padding: 3%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 3rem;
+		font-weight: bold;
+		color: white;
+		text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+
+	  }
   .hero-image {
-	  
 	display: block;
 	position:absolute;
 	margin-left: auto;
   	margin-right: auto;
     z-index:0;
 	}
+	.hero-image-category {
+		display: block;
+		position:absolute;
+		margin-left: auto;
+		margin-right: auto;
+		z-index:0;
+	}
   .hero-text {
-	  
 	position:absolute;
 	display: flex;
     justify-content: center;
@@ -85,7 +120,19 @@ body {
  	margin-right: auto;
     z-index:1;
 	}
+
+ .category-text {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    font-weight: bold;
+	margin-left: auto;
+ 	margin-right: auto;
+    z-index:1;
+	}
   a, u { 
+	  color: white;
       text-decoration: none; 
     }  
   .card-title, .card-img-top, p, h5 {
@@ -105,6 +152,10 @@ body {
     border: none;
   }
 
+	.category-card:hover, .vehicle-card:hover, .list-item:hover {
+	  background-color: rgba(33,37,41,1.0);
+	}
+
 
 .form-control{
 	background-color: rgba(255,255,255,0.45);
@@ -115,8 +166,18 @@ body {
 }
 
 	@media screen and (max-width: 480px) {
+		.arrow-cat {
+		  display: none
+		}
+		#categories {
+			padding:0 5% 0 5%;
+		}
 		.hero-text {
 			font-size: 2.2rem;
+			text-align: center;
+		}
+		.category-text {
+			font-size: 3rem;
 			text-align: center;
 		}
 		.hero-image img {
@@ -126,14 +187,27 @@ body {
 			height: 80%;
 			width: 80%;
 		}
+		.hero-image-category img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 50%;
+			width: 50%;
+		}
 		.hero {
-			background-image: url('assets/fullback.png');
 			background-size: 400%;
 			background-position: center;
-			border: thick;
-			border-style: solid;
-			border-color: rgba(0,36,42,0.63);
 			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 3rem;
+			font-weight: bold;
+			color: white;
+			text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+		  }
+		.hero-category {
+			padding: 10% 0 3% 0;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -153,5 +227,18 @@ body {
 		.col-md-4 {
 			padding: 2%;
 		  }
+		
+		.benelogo {
+			max-width: 10%;
+			display: block;
+			margin-right: auto;
+		}
+/*
+		.navbar-toggler {
+			position: absolute;
+			right: 0;
+			margin: 0 4% 0 0;	
+		}
+*/
 		
 	}
