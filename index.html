@@ -51,15 +51,20 @@
       </div>
     </div>
   </nav>
-  	<div class="hero">
+  	<header class="hero">
+		<div class="hero-bg">
+			<img src="assets/benecar.jpg" alt="" />
+		</div>
 	  <div class="hero-image">
- <img src="assets/benefactor.svg" alt="" />
+		<img src="assets/benefactor.svg" alt="" />
 	  </div>
-	  <div class="hero-text">Welcome to Benefactor</div>
-		  <a data-scroll href="#categories">
-			<div class="arrow"></div>
-		  </a>
-	</div>
+		  <div class="hero-text">Welcome to Benefactor</div>
+			  <a data-scroll href="#categories">
+				<div class="arrow"></div>
+			  </a>
+		
+	</header>
+	<div class="spacer"></div>
 	
 
   <div class="container py-5" id="categories">
@@ -163,8 +168,20 @@
     </script>
 	
 	<script>
-	  window.addEventListener("DOMContentLoaded", () => {
-		document.body.classList.add("fade-in");
+	  document.addEventListener("DOMContentLoaded", () => {
+		document.body.classList.add("fade-init");
+
+		// Allow style to apply first
+		requestAnimationFrame(() => {
+		  requestAnimationFrame(() => {
+			document.body.classList.add("fade-in");
+		  });
+		});
+	  });
+
+	  // Optional: Clear classes on unload to prevent cache issues
+	  window.addEventListener("beforeunload", () => {
+		document.body.classList.remove("fade-in", "fade-init");
 	  });
 	</script>
 

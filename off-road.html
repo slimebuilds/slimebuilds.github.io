@@ -86,8 +86,20 @@
     }
     </script>
 	<script>
-	  window.addEventListener("DOMContentLoaded", () => {
-		document.body.classList.add("fade-in");
+	  document.addEventListener("DOMContentLoaded", () => {
+		document.body.classList.add("fade-init");
+
+		// Allow style to apply first
+		requestAnimationFrame(() => {
+		  requestAnimationFrame(() => {
+			document.body.classList.add("fade-in");
+		  });
+		});
+	  });
+
+	  // Optional: Clear classes on unload to prevent cache issues
+	  window.addEventListener("beforeunload", () => {
+		document.body.classList.remove("fade-in", "fade-init");
 	  });
 	</script>
 </body>
