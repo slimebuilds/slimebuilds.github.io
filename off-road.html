@@ -62,6 +62,7 @@
   <div class="container py-5 col-sm-3" id="categories">
 <!--    <h2 class="text-center mb-4"></h2>-->
     <div class="row text-center">
+		
       	<div class="list-item" onclick="toggleContent('item1')">Benefactor Dubsta 6x6<br>$200,000<br><i class="fa-solid fa-angle-down"></i></div>
 		<div id="item1" class="content"><img src="assets/off-road/" class="card-img-top" alt="" /></div>
 
@@ -84,6 +85,10 @@
       }
     }
     </script>
-
+	<script>
+	  window.addEventListener("DOMContentLoaded", () => {
+		document.body.classList.add("fade-in");
+	  });
+	</script>
 </body>
 </html>
