@@ -82,8 +82,6 @@ function openModal(category) {
   modal.style.display = 'flex'; // Show the modal
 }
 
-// Close modal function remains the same
-
 // Close Modal
 function closeModal() {
   const modal = document.getElementById('category-modal');
@@ -101,4 +99,6 @@ window.addEventListener('click', (event) => {
 // Attach functionality to category buttons
 document.querySelector('.dropbtn').addEventListener('click', openModal);
 // Get the close button and attach the closeModal function
-document.querySelector('.close-btn').addEventListener('click', closeModal);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.close-btn').addEventListener('click', closeModal);
+});
