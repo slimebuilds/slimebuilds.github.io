@@ -68,7 +68,7 @@ function openModal(category) {
 
       vehicleDiv.innerHTML = `
         <p>${vehicle.name}</p>
-		<img src="${vehicle.img}" alt="${vehicle.name}"><br>
+        <img src="${vehicle.img}" alt="${vehicle.name}"><br>
         <a>Price: ${vehicle.price} | </a>
         <a>Seats: ${vehicle.seats}</a>
       `;
@@ -80,7 +80,14 @@ function openModal(category) {
   }
 
   modal.style.display = 'flex'; // Show the modal
+
+  // Attach close button functionality here
+  const closeBtn = modal.querySelector('.close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
 }
+
 
 // Close Modal
 function closeModal() {
@@ -100,5 +107,11 @@ window.addEventListener('click', (event) => {
 document.querySelector('.dropbtn').addEventListener('click', openModal);
 // Get the close button and attach the closeModal function
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.close-btn').addEventListener('click', closeModal);
+  const closeBtn = document.querySelector('.close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  } else {
+    console.error('Close button element not found.');
+  }
 });
+
