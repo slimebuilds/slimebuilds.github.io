@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handlebar Haven</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Pirata+One&display=swap" rel="stylesheet">
+  <script>
+
+	// Loader Screen
+	window.addEventListener('load', () => {
+	  const loader = document.getElementById('loading-screen');
+	  if (loader) {
+		setTimeout(() => {
+		  loader.style.opacity = '0';
+		  loader.style.transition = 'opacity 0.5s ease';
+		  setTimeout(() => {
+			loader.style.display = 'none';
+		  }, 500);
+		}, 1500);
+	  }
+	});
+
+  </script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <img src="assets/hhlogo.png" alt="Handlebar Haven Logo" class="loading-logo">
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="assets/hhlogo.png" alt="Logo" class="nav-logo" />
+      <span class="site-title">Handlebar Haven</span>
+    </div>
+    <div class="navbar-right">
+      <a href="#home">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn"><a>Categories</a></button>
+        <div class="dropdown-content">
+          <a href="#cruisers">1</a>
+          <a href="#sportbikes">2</a>
+          <a href="#touring">3</a>
+        </div>
+      </div>
+      <a href="#contact">Contact Us</a>
+      <a href="#employees">Employees</a>
+    </div>
+  </nav>
+	
+  <header class="hero-header">
+    <img src="assets/hhlogo.png" alt="Handlebar Haven Logo">
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section home">
+    <h1>Welcome to Handlebar Haven</h1>
+    <div class="home-buttons">
+      <button onclick="location.href='#cruisers'">Category One</button>
+      <button onclick="location.href='#sportbikes'">Category Two</button>
+      <button onclick="location.href='#touring'">Category Three</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <h2>About Us</h2>
+    <p>Waiting for info to write here</p>
+  </section>
+
+  <!-- Newest Arrivals Section -->
+  <section id="newest" class="section newest">
+    <h2>Newest Arrivals</h2>
+    <div class="cards">
+      <div class="card"><img src="bike1.jpg" alt="" /><p>Bike Name</p></div>
+      <div class="card"><img src="bike2.jpg" alt="" /><p>Bike Name</p></div>
+      <div class="card"><img src="bike3.jpg" alt="" /><p>Bike Name</p></div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events Section -->
+  <section id="events" class="section events">
+    <h2>Upcoming Events</h2>
+<!--    <ul>-->
+      <a>TBA - ???</a><br>
+      <a>TBA - ???</a><br>
+      <a>TBA - ???</a>
+<!--    </ul>-->
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="section contact">
+    <h2>Contact Us</h2>
+    <p>Questions? Ready to ride? Reach out below.</p>
+    <button onclick="window.location.href='https://forms.gle/example'">Open Contact Form</button>
+  </section>
+
+  <!-- Employees Section -->
+  <section id="employees" class="section employees">
+    <h2>Meet the Team</h2>
+    <p>From gearheads to road warriors, our crew knows bikes inside and out.</p>
+    <div class="team">
+      <div class="member">
+        <img src="blank" alt="">
+        <h4>Name</h4>
+        <p>Position</p>
+      </div>
+      <div class="member">
+        <img src="blank" alt="">
+        <h4>Name</h4>
+        <p>Position</p>
+      </div>
+      <div class="member">
+        <img src="blank" alt="">
+        <h4>Name</h4>
+        <p>Position</p>
+      </div>
+    </div>
+  </section>
+	<section class="designed">
+		<a>Designed by: Johnny Esco</a>
+	</section>
+</body>
+</html>
