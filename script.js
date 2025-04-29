@@ -1,47 +1,36 @@
-// 🚀 Ensure menu toggling and modal functionality loads properly
 document.addEventListener("DOMContentLoaded", () => {
-  // ✅ Mobile Menu Toggle Setup
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (menuToggle && mobileMenu) {
-    console.log("Mobile menu setup complete."); // Debugging
 
     menuToggle.addEventListener("click", () => {
-      console.log("Menu button clicked!"); // Debugging
-      mobileMenu.classList.toggle("show"); // Toggles visibility
+
+      mobileMenu.classList.toggle("show");
     });
 
-    // Hide menu after clicking a link
+
     mobileMenu.addEventListener("click", (event) => {
       if (event.target.tagName === "A") {
         mobileMenu.classList.remove("show");
       }
     });
-  } else {
-    console.error("Menu toggle or mobile menu not found. Check HTML IDs.");
   }
 
-  // ✅ Modal Setup: Open and Close
   window.openModal = function (category) {
     const modal = document.getElementById("category-modal");
     const vehicleList = modal.querySelector(".vehicle-list");
     const modalContent = modal.querySelector(".modal-content");
     const backToTopBtn = modal.querySelector("#back-to-top");
 
-    // Ensure Back to Top works without duplicate event listeners
     if (backToTopBtn && modalContent) {
       backToTopBtn.removeEventListener("click", scrollToTop);
       function scrollToTop() {
         modalContent.scrollTop = 0;
       }
       backToTopBtn.addEventListener("click", scrollToTop);
-    } else {
-      console.error("Back to Top button or modal content missing.");
     }
 
-
-  // Example data for vehicles
   const vehicles = {
     cruiser: [
       { name: 'LCC Avarus', price: '$37,400', seats: 1, img: 'assets/cruiser/avarus.png' },
@@ -136,10 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	  { name: 'Shitzu VTF-1000', price: '$39,600', seats: 2, img: 'assets/sport/vtf1000.png' },
       { name: 'Nagasaki XP1', price: '$60,500', seats: 1, img: 'assets/sport/xp1.png' },	
     ],
-    // Add more categories and vehicles here
   };
 
-   // ✅ Populate modal with relevant vehicles
     vehicleList.innerHTML = "";
     if (vehicles[category]) {
       vehicles[category].forEach((vehicle) => {
@@ -159,9 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
       vehicleList.innerHTML = "<p>No vehicles found in this category.</p>";
     }
 
-    modal.style.display = "flex"; // Show modal
+    modal.style.display = "flex";
 
-    // ✅ Close modal when clicking close button or outside area
     const closeBtn = modal.querySelector(".close-btn");
     if (closeBtn) {
       closeBtn.removeEventListener("click", closeModal);

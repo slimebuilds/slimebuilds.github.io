@@ -6,7 +6,6 @@
       background-color: #111;
       color: #eee;
 	  background-image: url("assets/hhbg.png");
-/*	  background-blend-mode: overlay;*/
     }
 	h1, h2, h4 {
 	  font-size: 3vw;
@@ -70,7 +69,6 @@
       cursor: pointer;
       transition: 0.3s;
     }
-
 	.dropbtn {
       color: #eee;
       text-decoration: none;
@@ -83,7 +81,7 @@
 	  cursor: pointer;
       color: #EE2824;
 	  font-weight: 600;
-	  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75); /* subtle glow */
+	  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
   	  transition: text-shadow 0.3s ease;
     }
     .dropdown {
@@ -140,18 +138,15 @@
     .home-buttons button:hover {
       background-color: #A60F0C;
       transform: scale(1.05);
-	  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75); /* subtle glow */
-  	  transition: text-shadow 0.3s ease;
-		
+	  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+  	  transition: text-shadow 0.3s ease;	
     }
-
 	.home h1:hover {
 	  color: #A60F0C;
-	  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* subtle glow */
+	  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   	  transition: text-shadow 0.3s ease;
 	  transition: color 0.3s ease;
 	}
-
 	.home h1 {
 	  transition: color 0.3s ease;
 	}
@@ -205,24 +200,22 @@
 	  padding: 0 0 2vw 0;
 	  transition: text-shadow 0.3s ease;
 	}
-
 	.modal {
-	  display: none; /* Hidden by default */
+	  display: none;
 	  position: fixed;
 	  top: 0;
 	  left: 0;
 	  width: 100%;
 	  height: 100%;
-	  background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
+	  background-color: rgba(0, 0, 0, 0.8);
 	  z-index: 2000;
 	  justify-content: center;
 	  align-items: center;
 	}
-
 	.modal-content {
 	  position: relative;
 	  display: flex;
-  	  flex-direction: column; /* Ensure content flows properly */
+  	  flex-direction: column;
 	  background-color: #222;
 	  color: #eee;
 	  width: 80%;
@@ -230,22 +223,19 @@
 	  padding: 20px;
 	  padding-bottom: 50px;
 	  border-radius: 10px;
-	  max-height: 80%; /* Constrain the height to allow scrolling */
-  	  overflow-y: auto; /* Enable vertical scrolling */
+	  max-height: 80%;
+  	  overflow-y: auto;
 	}
-
 	.vehicle-list {
 	  text-align: center;
 	  display: flex;
 	  flex-direction: column;
 	  gap: 20px;
 	}
-
 	.vehicle img {
 	  width: 100%;
 	  border-radius: 5px;
 	}
-
 	.close-btn {
 	  font-size: 24px;
 	  font-weight: bold;
@@ -256,16 +246,13 @@
 	  cursor: pointer;
 	  transition: color 0.3s ease;
 	  z-index: 100;
-
 	}
-
 	.close-btn:hover {
-	  color: #EE2824; /* Highlight color on hover */
+	  color: #EE2824;
 	}
-
 	#back-to-top {
 	  position: sticky;
-	  bottom: 10px; /* Always sticks to 10px from the bottom of the visible modal content */
+	  bottom: 10px;
 	  margin: 10px auto;
 	  padding: 10px 20px;
 	  background-color: #EE2824;
@@ -275,33 +262,13 @@
 	  font-size: 16px;
 	  cursor: pointer;
 	  transition: background-color 0.3s ease, transform 0.2s ease;
-	  z-index: 10; /* Keeps it above other content */
+	  z-index: 10;
 	}
-
 	#back-to-top:hover {
 	  background-color: #A60F0C;
 	  transform: scale(1.05);
 	}
-
-
-
-
     @media (max-width: 768px) {
-	   
-/*
-      .navbar-right {
-        display: none;
-      }
-      .navbar::after {
-        content: '☰';
-        font-size: 24px;
-        color: #eee;
-        position: absolute;
-        right: 20px;
-        cursor: pointer;
-      }
-*/
-		
 	  .menu-icon {
 		font-size: 24px;
 		color: #eee;
@@ -310,11 +277,11 @@
 		cursor: pointer;
 		position: absolute;
 		right: 20px;
-		z-index: 2000 !important; /* Makes sure it's clickable */
+		z-index: 2000 !important;
 	  }
 
 	  .navbar-right {
-		display: none !important; /* Ensure it's hidden by default */
+		display: none !important;
 		flex-direction: column;
 		background: #222;
 		position: absolute;
@@ -327,27 +294,18 @@
 	  }
 
 	  .navbar-right.show, .navbar-right[style*="display: block"] {
-		display: flex !important; /* Ensure visibility when toggled */
+		display: flex !important;
 	  }
-
-
 	  #menu-toggle {
-/*		position: relative;*/
 		z-index: 5000 !important;
 	  }
-
-
-
-
 	  .navbar-right a {
 		padding: 10px;
 		display: block;
 		text-align: center;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	  }
-
 	  .navbar::after {
-/*		content: '☰';*/
 		font-size: 24px;
 		color: #eee;
 		position: absolute;
@@ -355,21 +313,6 @@
 		cursor: pointer;
 		z-index: 1001;
 	  }
-/*
-	  .menu-icon {
-		font-size: 24px;
-		color: #eee;
-		background: none;
-		border: none;
-		cursor: pointer;
-		position: absolute;
-		right: 20px;
-		z-index: 1001;
-	  }
-*/
-
-
-	
 	  header.hero-header {
         height: 175vw;
       }
@@ -392,11 +335,10 @@
 
 	@media (min-width: 769px) {
 	  .navbar-right {
-		display: flex; /* Ensure desktop shows correctly */
+		display: flex;
 		justify-content: space-between;
 	  }
 		 #menu-toggle {
-		display: none; /* Hide menu button on desktop */
+		display: none;
 	  }
-
 	}
