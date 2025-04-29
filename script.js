@@ -51,7 +51,7 @@ function openModal(category) {
 	  { name: 'Western Spirit Chopper', price: '$19,800', seats: 1, img: 'assets/cruiser/spirit.png' },
 	  { name: 'LCC Templar', price: '$16,500', seats: 1, img: 'assets/cruiser/templar.png' },
 	  { name: 'Dinka Thrust', price: '$16,500', seats: 2, img: 'assets/cruiser/thrust.png' },
-	  { name: 'Dinka Vindicator', price: '$14,300', seats: 1, img: 'assets/cruiser/vindicator.png' },
+	  { name: 'Dinka Vindicator', price: '$14,300', seats: 2, img: 'assets/cruiser/vindicator.png' },
 	  { name: 'Western Wintergreen', price: '$33,000', seats: 2, img: 'assets/cruiser/wintergreen.png' },
 	  { name: 'Western Wolfsbane', price: '$17,050', seats: 2, img: 'assets/cruiser/wolfsbane.png' },
 	  { name: 'Western Zombie Bobber', price: '$19,250', seats: 1, img: 'assets/cruiser/zombiebob.png' },
