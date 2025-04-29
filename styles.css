@@ -287,6 +287,9 @@
 
 
     @media (max-width: 768px) {
+	   body,html {
+			background-blend-mode: overlay;
+	  }
       .navbar-right {
         display: none;
       }
