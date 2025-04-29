@@ -221,14 +221,17 @@
 
 	.modal-content {
 	  position: relative;
+	  display: flex;
+  	  flex-direction: column; /* Ensure content flows properly */
 	  background-color: #222;
 	  color: #eee;
 	  width: 80%;
 	  max-width: 500px;
 	  padding: 20px;
+	  padding-bottom: 50px;
 	  border-radius: 10px;
-	  overflow-y: auto; /* Enables scrolling */
-	  max-height: 90%; /* Limits height */
+	  max-height: 80%; /* Constrain the height to allow scrolling */
+  	  overflow-y: auto; /* Enable vertical scrolling */
 	}
 
 	.vehicle-list {
@@ -259,6 +262,29 @@
 	.close-btn:hover {
 	  color: #EE2824; /* Highlight color on hover */
 	}
+
+	#back-to-top {
+	  position: sticky;
+	  bottom: 10px; /* Always sticks to 10px from the bottom of the visible modal content */
+	  margin: 10px auto;
+	  padding: 10px 20px;
+	  background-color: #EE2824;
+	  color: #fff;
+	  border: none;
+	  border-radius: 5px;
+	  font-size: 16px;
+	  cursor: pointer;
+	  transition: background-color 0.3s ease, transform 0.2s ease;
+	  z-index: 10; /* Keeps it above other content */
+	}
+
+	#back-to-top:hover {
+	  background-color: #A60F0C;
+	  transform: scale(1.05);
+	}
+
+
+
 
     @media (max-width: 768px) {
       .navbar-right {

@@ -1,6 +1,17 @@
 function openModal(category) {
   const modal = document.getElementById('category-modal');
   const vehicleList = modal.querySelector('.vehicle-list');
+  const modalContent = document.querySelector('.modal-content');
+  const backToTopBtn = modal.querySelector('#back-to-top');
+
+  if (backToTopBtn && modalContent) {
+    backToTopBtn.addEventListener('click', () => {
+      modalContent.scrollTop = 0; // Scrolls to top
+    });
+  } else {
+    console.error("Could not find Back to Top button or modal content");
+  }
+
 
   // Clear existing content
   vehicleList.innerHTML = '';
@@ -114,4 +125,25 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Close button element not found.');
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backToTopBtn = document.getElementById('back-to-top');
+  const modalContent = document.querySelector('.modal-content');
+
+  if (backToTopBtn && modalContent) {
+      backToTopBtn.addEventListener('click', () => {
+	  		modalContent.scrollTop = 0; // Forces the scroll to the top
+		});
+
+    console.log("Back to Top functionality attached successfully");
+  } else {
+    console.error("Unable to find Back to Top button or modal content.");
+  }
+});
+
+console.log(modalContent);
+
+
+
 
