@@ -1,20 +1,45 @@
-function openModal(category) {
-  const modal = document.getElementById('category-modal');
-  const vehicleList = modal.querySelector('.vehicle-list');
-  const modalContent = document.querySelector('.modal-content');
-  const backToTopBtn = modal.querySelector('#back-to-top');
+// 🚀 Ensure menu toggling and modal functionality loads properly
+document.addEventListener("DOMContentLoaded", () => {
+  // ✅ Mobile Menu Toggle Setup
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-  if (backToTopBtn && modalContent) {
-    backToTopBtn.addEventListener('click', () => {
-      modalContent.scrollTop = 0; // Scrolls to top
+  if (menuToggle && mobileMenu) {
+    console.log("Mobile menu setup complete."); // Debugging
+
+    menuToggle.addEventListener("click", () => {
+      console.log("Menu button clicked!"); // Debugging
+      mobileMenu.classList.toggle("show"); // Toggles visibility
+    });
+
+    // Hide menu after clicking a link
+    mobileMenu.addEventListener("click", (event) => {
+      if (event.target.tagName === "A") {
+        mobileMenu.classList.remove("show");
+      }
     });
   } else {
-    console.error("Could not find Back to Top button or modal content");
+    console.error("Menu toggle or mobile menu not found. Check HTML IDs.");
   }
 
+  // ✅ Modal Setup: Open and Close
+  window.openModal = function (category) {
+    const modal = document.getElementById("category-modal");
+    const vehicleList = modal.querySelector(".vehicle-list");
+    const modalContent = modal.querySelector(".modal-content");
+    const backToTopBtn = modal.querySelector("#back-to-top");
 
-  // Clear existing content
-  vehicleList.innerHTML = '';
+    // Ensure Back to Top works without duplicate event listeners
+    if (backToTopBtn && modalContent) {
+      backToTopBtn.removeEventListener("click", scrollToTop);
+      function scrollToTop() {
+        modalContent.scrollTop = 0;
+      }
+      backToTopBtn.addEventListener("click", scrollToTop);
+    } else {
+      console.error("Back to Top button or modal content missing.");
+    }
+
 
   // Example data for vehicles
   const vehicles = {
@@ -114,78 +139,55 @@ function openModal(category) {
     // Add more categories and vehicles here
   };
 
-  // Populate the modal with relevant vehicles
-  if (vehicles[category]) {
-    vehicles[category].forEach(vehicle => {
-      const vehicleDiv = document.createElement('div');
-      vehicleDiv.classList.add('vehicle');
+   // ✅ Populate modal with relevant vehicles
+    vehicleList.innerHTML = "";
+    if (vehicles[category]) {
+      vehicles[category].forEach((vehicle) => {
+        const vehicleDiv = document.createElement("div");
+        vehicleDiv.classList.add("vehicle");
 
-      vehicleDiv.innerHTML = `
-        <p>${vehicle.name}</p>
-        <img src="${vehicle.img}" alt="${vehicle.name}"><br>
-        <a>Price: ${vehicle.price} | </a>
-        <a>Seats: ${vehicle.seats}</a>
-      `;
+        vehicleDiv.innerHTML = `
+          <p>${vehicle.name}</p>
+          <img src="${vehicle.img}" alt="${vehicle.name}"><br>
+          <a>Price: ${vehicle.price} | </a>
+          <a>Seats: ${vehicle.seats}</a>
+        `;
 
-      vehicleList.appendChild(vehicleDiv);
+        vehicleList.appendChild(vehicleDiv);
+      });
+    } else {
+      vehicleList.innerHTML = "<p>No vehicles found in this category.</p>";
+    }
+
+    modal.style.display = "flex"; // Show modal
+
+    // ✅ Close modal when clicking close button or outside area
+    const closeBtn = modal.querySelector(".close-btn");
+    if (closeBtn) {
+      closeBtn.removeEventListener("click", closeModal);
+      closeBtn.addEventListener("click", closeModal);
+    }
+
+    window.addEventListener("click", (event) => {
+      if (!modalContent.contains(event.target) && event.target === modal) {
+        closeModal();
+      }
     });
-  } else {
-    vehicleList.innerHTML = '<p>No vehicles found in this category.</p>';
-  }
+  };
 
-  modal.style.display = 'flex'; // Show the modal
-
-  // Attach close button functionality here
-  const closeBtn = modal.querySelector('.close-btn');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-}
-
-
-// Close Modal
-function closeModal() {
-  const modal = document.getElementById('category-modal');
-  modal.style.display = 'none';
-}
-
-// Close when clicking outside content
-window.addEventListener('click', (event) => {
-  const modal = document.getElementById('category-modal');
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-});
-
-// Attach functionality to category buttons
-document.querySelector('.dropbtn').addEventListener('click', openModal);
-// Get the close button and attach the closeModal function
-document.addEventListener('DOMContentLoaded', () => {
-  const closeBtn = document.querySelector('.close-btn');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  } else {
-    console.error('Close button element not found.');
-  }
+  window.closeModal = function () {
+    document.getElementById("category-modal").style.display = "none";
+  };
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const backToTopBtn = document.getElementById('back-to-top');
-  const modalContent = document.querySelector('.modal-content');
 
-  if (backToTopBtn && modalContent) {
-      backToTopBtn.addEventListener('click', () => {
-	  		modalContent.scrollTop = 0; // Forces the scroll to the top
-		});
 
-    console.log("Back to Top functionality attached successfully");
-  } else {
-    console.error("Unable to find Back to Top button or modal content.");
-  }
-});
 
-console.log(modalContent);
+
+
+
+
 
 
 

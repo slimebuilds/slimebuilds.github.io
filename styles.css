@@ -287,9 +287,8 @@
 
 
     @media (max-width: 768px) {
-	   body,html {
-			background-blend-mode: overlay;
-	  }
+	   
+/*
       .navbar-right {
         display: none;
       }
@@ -301,6 +300,76 @@
         right: 20px;
         cursor: pointer;
       }
+*/
+		
+	  .menu-icon {
+		font-size: 24px;
+		color: #eee;
+		background: none;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+		right: 20px;
+		z-index: 2000 !important; /* Makes sure it's clickable */
+	  }
+
+	  .navbar-right {
+		display: none !important; /* Ensure it's hidden by default */
+		flex-direction: column;
+		background: #222;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		padding: 10px;
+		box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+		z-index: 1000;
+	  }
+
+	  .navbar-right.show, .navbar-right[style*="display: block"] {
+		display: flex !important; /* Ensure visibility when toggled */
+	  }
+
+
+	  #menu-toggle {
+/*		position: relative;*/
+		z-index: 5000 !important;
+	  }
+
+
+
+
+	  .navbar-right a {
+		padding: 10px;
+		display: block;
+		text-align: center;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	  }
+
+	  .navbar::after {
+/*		content: '☰';*/
+		font-size: 24px;
+		color: #eee;
+		position: absolute;
+		right: 20px;
+		cursor: pointer;
+		z-index: 1001;
+	  }
+/*
+	  .menu-icon {
+		font-size: 24px;
+		color: #eee;
+		background: none;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+		right: 20px;
+		z-index: 1001;
+	  }
+*/
+
+
+	
 	  header.hero-header {
         height: 175vw;
       }
@@ -320,3 +389,14 @@
 	    font-size: 4.5vw;
 	  }
     }
+
+	@media (min-width: 769px) {
+	  .navbar-right {
+		display: flex; /* Ensure desktop shows correctly */
+		justify-content: space-between;
+	  }
+		 #menu-toggle {
+		display: none; /* Hide menu button on desktop */
+	  }
+
+	}
