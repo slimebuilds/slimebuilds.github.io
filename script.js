@@ -164,20 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.closeModal = function () {
     document.getElementById("category-modal").style.display = "none";
   };
-	
-  document.querySelectorAll(".click-to-copy").forEach(elem => {
-    elem.addEventListener("click", function () {
-      const text = this.childNodes[0].nodeValue.trim();
-      navigator.clipboard.writeText(text).then(() => {
-        this.classList.add("show-tooltip");
-        setTimeout(() => {
-          this.classList.remove("show-tooltip");
-        }, 1500); // Show for 1.5 seconds
-      }).catch(err => {
-        console.error("Copy failed", err);
-      });
-    });
-  });
 
 
 

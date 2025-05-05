@@ -110,20 +110,21 @@
 <!--        <img src="blank" alt="">-->
         <h2>Mattie Belmont</h2>
         <p>Owner</p>
-		<p class="click-to-copy" title="Click to copy">8340649413 <span class="tooltip">Copied!</span></p>
+<!--		<p class="click-to-copy" title="Click to copy" data-copy="8340649413">8340649413 <span class="tooltip">Copied!</span></p>-->
+		<p class="click-to-copy" title="Click to copy">8340649413</p>
       </div>
       <div class="member">
 <!--        <img src="blank" alt="">-->
         <h2>Barry<br>Grimes</h2>
 		<p>Co-Owner</p>
-		<p class="click-to-copy" title="Click to copy">8337597656 <span class="tooltip">Copied!</span></p>
+		<p class="click-to-copy" title="Click to copy">8337597656</p>
 <!--        <p>Position</p>-->
       </div>
       <div class="member">
 <!--        <img src="blank" alt="">-->
         <h2>Carina<br>Bail</h2>
 		<p>Manager</p>
-		<p class="click-to-copy" title="Click to copy">8391571723 <span class="tooltip">Copied!</span></p>
+		<p class="click-to-copy" title="Click to copy">8391571723</p>
 <!--        <p>Position</p>-->
       </div>
 		<div class="team">
@@ -131,20 +132,20 @@
 	<!--        <img src="blank" alt="">-->
 			<h2>Parker Belmont</h2>
 			<p>Manager</p>
-			<p class="click-to-copy" title="Click to copy">8344615342 <span class="tooltip">Copied!</span></p>
+			<p class="click-to-copy" title="Click to copy">8344615342</p>
 		  </div>
 		  <div class="member">
 	<!--        <img src="blank" alt="">-->
 			<h2>Antonio Accardi</h2>
 			<p>Manager</p>
-			<p class="click-to-copy" title="Click to copy">8356214735 <span class="tooltip">Copied!</span></p>
+			<p class="click-to-copy" title="Click to copy">8356214735</p>
 	<!--        <p>Position</p>-->
 		  </div>
 		  <div class="member">
 	<!--        <img src="blank" alt="">-->
 			<h2>Connor McGinty</h2>
 			<p>Manager</p>
-			<p class="click-to-copy" title="Click to copy">8312367078 <span class="tooltip">Copied!</span></p>
+			<p class="click-to-copy" title="Click to copy">8312367078</p>
 	<!--        <p>Position</p>-->
 		  </div>
 		</div>
@@ -153,5 +154,45 @@
 	<section class="designed">
 		<a>Designed by: Johnny Esco</a>
 	</section>
+	<script>
+  document.querySelectorAll(".click-to-copy").forEach(elem => {
+    elem.addEventListener("click", () => {
+      const text = elem.textContent.trim();
+
+      // Use Clipboard API if available
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(() => {
+            showTooltip(elem, "Copied!");
+          })
+          .catch(err => {
+            console.error("Clipboard copy failed: ", err);
+          });
+      } else {
+        // Fallback for older browsers
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand("copy");
+          showTooltip(elem, "Copied!");
+        } catch (err) {
+          console.error("Fallback copy failed", err);
+        }
+        document.body.removeChild(textarea);
+      }
+    });
+  });
+
+  function showTooltip(element, message) {
+    const original = element.textContent;
+    element.textContent = message;
+    setTimeout(() => {
+      element.textContent = original;
+    }, 1000);
+  }
+</script>
+
 </body>
 </html>
