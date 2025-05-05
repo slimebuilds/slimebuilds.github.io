@@ -128,23 +128,24 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
     vehicleList.innerHTML = "";
-    if (vehicles[category]) {
-      vehicles[category].forEach((vehicle) => {
-        const vehicleDiv = document.createElement("div");
-        vehicleDiv.classList.add("vehicle");
+	if (vehicles[category]) {
+	  vehicles[category].forEach((vehicle) => {
+		const vehicleDiv = document.createElement("div");
+		vehicleDiv.classList.add("vehicle");
 
-        vehicleDiv.innerHTML = `
-          <p>${vehicle.name}</p>
-          <img src="${vehicle.img}" alt="${vehicle.name}"><br>
-          <a>Price: ${vehicle.price} | </a>
-          <a>Seats: ${vehicle.seats}</a>
-        `;
+		vehicleDiv.innerHTML = `
+		  <p>${vehicle.name}</p>
+		  <img src="${vehicle.img}" alt="${vehicle.name}"><br>
+		  <a>Price: ${vehicle.price} | </a>
+		  <a>Seats: ${vehicle.seats}</a>
+		`;
 
-        vehicleList.appendChild(vehicleDiv);
-      });
-    } else {
-      vehicleList.innerHTML = "<p>No vehicles found in this category.</p>";
-    }
+		vehicleList.appendChild(vehicleDiv);
+	  });
+	} else {
+	  vehicleList.innerHTML = "<p>No vehicles found in this category.</p>";
+	}
+
 
     modal.style.display = "flex";
 
@@ -164,16 +165,42 @@ document.addEventListener("DOMContentLoaded", () => {
   window.closeModal = function () {
     document.getElementById("category-modal").style.display = "none";
   };
+	
+  document.querySelectorAll(".click-to-copy").forEach(elem => {
+		elem.addEventListener("click", () => {
+		  const text = elem.textContent.trim();
 
+		  // Use Clipboard API if available
+		  if (navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard.writeText(text)
+			  .then(() => {
+				showTooltip(elem, "Copied!");
+			  })
+			  .catch(err => {
+				console.error("Clipboard copy failed: ", err);
+			  });
+		  } else {
+			// Fallback for older browsers
+			const textarea = document.createElement("textarea");
+			textarea.value = text;
+			document.body.appendChild(textarea);
+			textarea.select();
+			try {
+			  document.execCommand("copy");
+			  showTooltip(elem, "Copied!");
+			} catch (err) {
+			  console.error("Fallback copy failed", err);
+			}
+			document.body.removeChild(textarea);
+		  }
+		});
+	  });
 
-
-
-
-
-
-
-
-
-
-
-
+	  function showTooltip(element, message) {
+		const original = element.textContent;
+		element.textContent = message;
+		setTimeout(() => {
+		  element.textContent = original;
+		}, 1000);
+	  }
+});

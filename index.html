@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Handlebar Haven</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <script defer src="script.js?v=1.0"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Pirata+One&display=swap" rel="stylesheet">
@@ -154,45 +153,6 @@
 	<section class="designed">
 		<a>Designed by: Johnny Esco</a>
 	</section>
-	<script>
-  document.querySelectorAll(".click-to-copy").forEach(elem => {
-    elem.addEventListener("click", () => {
-      const text = elem.textContent.trim();
-
-      // Use Clipboard API if available
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text)
-          .then(() => {
-            showTooltip(elem, "Copied!");
-          })
-          .catch(err => {
-            console.error("Clipboard copy failed: ", err);
-          });
-      } else {
-        // Fallback for older browsers
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand("copy");
-          showTooltip(elem, "Copied!");
-        } catch (err) {
-          console.error("Fallback copy failed", err);
-        }
-        document.body.removeChild(textarea);
-      }
-    });
-  });
-
-  function showTooltip(element, message) {
-    const original = element.textContent;
-    element.textContent = message;
-    setTimeout(() => {
-      element.textContent = original;
-    }, 1000);
-  }
-</script>
 
 </body>
 </html>
