@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const vehicleList = modal.querySelector(".vehicle-list");
     const modalContent = modal.querySelector(".modal-content");
     const backToTopBtn = modal.querySelector("#back-to-top");
+	const searchInput = modal.querySelector("#vehicle-search");
+	const searchButton = modal.querySelector("#search-button");
 
     if (backToTopBtn && modalContent) {
       backToTopBtn.removeEventListener("click", scrollToTop);
@@ -30,6 +32,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       backToTopBtn.addEventListener("click", scrollToTop);
     }
+	
+	if (searchButton && searchInput) {
+	  searchButton.onclick = () => {
+		const query = searchInput.value.toLowerCase();
+		const vehicleDivs = modal.querySelectorAll(".vehicle");
+
+		let found = false;
+		for (const div of vehicleDivs) {
+		  const name = div.querySelector("p").textContent.toLowerCase();
+		  if (name.includes(query)) {
+			div.scrollIntoView({ behavior: "smooth", block: "center" });
+			div.style.boxShadow = "0 0 15px 5px #EE2824"; // highlight
+			setTimeout(() => {
+			  div.style.boxShadow = ""; // remove highlight after a second
+			}, 1500);
+			found = true;
+			break;
+		  }
+		}
+
+		if (!found) {
+		  alert("No vehicle found with that name.");
+		}
+	  };
+	}
 
   const vehicles = {
     cruiser: [
