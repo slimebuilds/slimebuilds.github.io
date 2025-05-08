@@ -421,6 +421,28 @@
 		margin: 2vw;
 	    width: 45vw;
 	  }
+	  .vehicle-search {
+		  margin-top: 8vw;
+		  padding: 10px;
+		  margin-bottom: 10px;
+		  border-radius: 5px;
+		  border: 1px solid #444;
+		  background-color: #111;
+		  color: #eee;
+		  max-width: auto;
+		}
+
+		#search-button {
+		  padding: 10px 10px 10px 10px;
+		  margin-bottom: 20px;
+		  width: 100%;
+		  background-color: #EE2824;
+		  color: white;
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		  font-size: 5vw;
+		}
     }
 
 	@media (min-width: 769px) {
