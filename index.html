@@ -1,160 +1,78 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Handlebar Haven</title>
+  <title>Banchan Korean Restaurant</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js?v=1.0"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Pirata+One&display=swap" rel="stylesheet">
-  <script>
-	window.addEventListener('load', () => {
-	  const loader = document.getElementById('loading-screen');
-	  if (loader) {
-		setTimeout(() => {
-		  loader.style.opacity = '0';
-		  loader.style.transition = 'opacity 0.5s ease';
-		  setTimeout(() => {
-			loader.style.display = 'none';
-		  }, 500);
-		}, 1500);
-	  }
-	});
-  </script>
 </head>
 <body>
-  <div id="loading-screen">
-    <div class="loading-content">
-      <img src="assets/hhlogo.png" alt="Handlebar Haven Logo" class="loading-logo">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+	  <img src="images/navlogo.svg" alt="Banchan Logo" class="nav-logo" />	
+	</div>
+    <button class="nav-toggle" id="navToggle">𓃑</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="home">
+    <div class="banner">
+      <div class="scroll-arrow" onclick="scrollToMenu()">↓</div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <button id="openModal">View Full Menu</button>
+    <div class="cards">
+      <div class="card"> <img src="images/menu/koreanbbq/beefbulgogi.png" alt="Beef Bulgogi" /></div>
+      <div class="card"> <img src="images/menu/hotpot/hotpot.png" alt="Hot Pot" /></div>
+      <div class="card"> <img src="images/menu/mains/koreanfriedchicken.png" alt="Korean Fried Chicken" /></div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="menuModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+		<div style="text-align:center;"> 
+		  <div class="modal-tabs">
+			<button class="tab" onclick="showTab('koreanbbq')">Korean BBQ</button>
+			<button class="tab" onclick="showTab('hotpot')">Hot Pots</button>
+			<button class="tab" onclick="showTab('mains')">Mains</button>
+			<button class="tab" onclick="showTab('sweets')">Sweets</button>
+			<button class="tab" onclick="showTab('drinks')">Drinks</button>
+			<button class="tab" onclick="showTab('alcohol')">Alcohol</button>
+		  </div>
+		</div>
+      <div class="tab-content" id="tabContent"></div>
     </div>
   </div>
 
-  <nav class="navbar">
-    <div class="navbar-left">
-      <img src="assets/hhlogo.png" alt="Logo" class="nav-logo" />
-      <span class="site-title">Handlebar Haven</span>
-    </div>
-	<button id="menu-toggle" class="menu-icon">☰</button>
-    <div class="navbar-right" id="mobile-menu">
-      <a href="index.html">Home</a>
-	  <a href="#home">Categories</a>
-      <a href="#contact">Apply</a>
-      <a href="#employees">Team</a>
-    </div>
-  </nav>
-	
-  <header class="hero-header">
-    <img src="assets/hhlogo.png" alt="Handlebar Haven Logo">
-  </header>
-
-  <section id="home" class="section home">
-    <h1>Welcome to Handlebar Haven</h1>
-    <div class="home-buttons" id="categories">
-	  <button onclick="openModal('cruiser')">Choppers &#38 Cruisers</button>
-	  <button onclick="openModal('commuter')">Commuter Bikes</button>
-	  <button onclick="openModal('bicycle')">Bicycles</button>
-	  <button onclick="openModal('quad')">Quad Bikes</button>
-	  <button onclick="openModal('sport')">Sports Bikes</button>
-	</div>
-
-
-  </section>
-	<div id="category-modal" class="modal">
-	  <div class="modal-content">
-		<span class="close-btn">Close</span>
-		<input type="text" id="vehicle-search" placeholder="Search vehicle name..." class="vehicle-search">
-		<button id="search-button">Search</button>
-		<div class="vehicle-list">
-		  <div class="vehicle">
-		  </div>
-		</div>
-		<button id="back-to-top">Back to Top</button>
-	  </div>
-	</div>
-
-  <section id="about" class="section about">
-    <h2>About Us</h2>
-    <p>Handlebar Haven is your one stop shop for all your bike needs from choppers like the old reliable Angel deluxe to a commuter like a funny lil guy thats the Ventoso, as well as sport bikes like the Hakucho. If it has two wheels or sometimes even three theres a good chance you can buy it here!</p>
-  </section>
-
-
-  <section id="newest" class="section newest">
-    <h2>Newest Arrivals</h2>
-    <div class="cards">
-      <div class="card"><img src="assets/cruiser/speedster.png" alt="" /><a>Western Speedster</a></div><br>
-      <div class="card"><img src="assets/cruiser/freeway.png" alt="" /><a>Western Freeway</a></div><br>
-      <div class="card"><img src="assets/cruiser/nightbladehex.png" alt="" /><a>Western Nightblade Hex</a></div>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <button onclick="window.location.href=''">Contact Us</button>
+    <div class="info">
+      <h3>Upcoming Events</h3>
+      <p>TBA</p>
+      <h3>Now Hiring!</h3>
+      <button onclick="window.location.href=''">Apply Here</button>
     </div>
   </section>
 
-<!--
-  <section id="events" class="section events">
-    <h2>Upcoming Events</h2>
-      <a>TBA - ???</a><br>
-      <a>TBA - ???</a><br>
-      <a>TBA - ???</a>
-  </section>
--->
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Designed by: Esco's Web Assistance Program</p>
+    <div class="socials">
 
-
-  <section id="contact" class="section contact">
-    <h2>Looking for a job?</h2>
-    <p>If you're interested in working with the team feel free to apply below!</p>
-    <button onclick="location.href='https://tinyurl.com/HHavenApp'">Apply Here</button>
-  </section>
-
-  <section id="employees" class="section employees">
-    <h2>Meet our Management</h2>
-    <div class="team">
-      <div class="member">
-<!--        <img src="blank" alt="">-->
-        <h2>Mattie Belmont</h2>
-        <p>Owner</p>
-<!--		<p class="click-to-copy" title="Click to copy" data-copy="8340649413">8340649413 <span class="tooltip">Copied!</span></p>-->
-		<p class="click-to-copy" title="Click to copy">8340649413</p>
-      </div>
-      <div class="member">
-<!--        <img src="blank" alt="">-->
-        <h2>Barry<br>Grimes</h2>
-		<p>Co-Owner</p>
-		<p class="click-to-copy" title="Click to copy">8337597656</p>
-<!--        <p>Position</p>-->
-      </div>
-      <div class="member">
-<!--        <img src="blank" alt="">-->
-        <h2>Carina<br>Bail</h2>
-		<p>Manager</p>
-		<p class="click-to-copy" title="Click to copy">8391571723</p>
-<!--        <p>Position</p>-->
-      </div>
-		<div class="team">
-		  <div class="member">
-	<!--        <img src="blank" alt="">-->
-			<h2>Parker Belmont</h2>
-			<p>Manager</p>
-			<p class="click-to-copy" title="Click to copy">8344615342</p>
-		  </div>
-		  <div class="member">
-	<!--        <img src="blank" alt="">-->
-			<h2>Antonio Accardi</h2>
-			<p>Manager</p>
-			<p class="click-to-copy" title="Click to copy">8356214735</p>
-	<!--        <p>Position</p>-->
-		  </div>
-		  <div class="member">
-	<!--        <img src="blank" alt="">-->
-			<h2>Connor McGinty</h2>
-			<p>Manager</p>
-			<p class="click-to-copy" title="Click to copy">8312367078</p>
-	<!--        <p>Position</p>-->
-		  </div>
-		</div>
-		</div>
-	  </section>
-	<section class="designed">
-		<a>Designed by: Johnny Esco</a>
-	</section>
-
+    </div>
+  </footer>
+<script defer src="script.js"></script> 
 </body>
 </html>
