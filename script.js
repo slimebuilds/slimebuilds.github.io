@@ -134,8 +134,8 @@ function showTab(tab) {
 	  <div class="food-item">
         <img src="images/menu/drinks/hibiscus.png" alt="Hibiscus Herbal Tea with Blueberry Popping Boba">
         <h2>Hibiscus Herbal Tea with Blueberry Popping Boba</h2>
-		<a>Floral bliss infused with blueberry popping boba for a delightful burst of fruity freshness in every sip.</a>
-		<a>Teaspoon of Boba</a>
+		<a>Floral bliss infused with blueberry popping boba for a delightful burst of fruity freshness in every sip.</a></br>
+		<a>(Teaspoon of Boba)</a>
         <p>$25</p>
       </div>
 	  <div class="food-item">
