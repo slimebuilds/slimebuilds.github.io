@@ -322,6 +322,31 @@
 	  color: var(--primary);
 	  font-weight: bold;
 	}
+	
+	.copy-text {
+	  cursor: pointer;
+	  color: var(--primary);
+	  font-weight: bold;
+	  font-size: 1.3rem;
+	}
+
+	.copy-text:hover {
+	  text-decoration: underline;
+	}
+
+	.mapimage {
+	  width: 100%;
+	  margin: 1rem 0;
+	  text-align: center;
+	}
+
+	.mapimage img {
+	  max-width: 100%;
+	  height: auto;
+	  border-radius: 10px;
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+	}
+
 
 
   @media (max-width: 768px) {

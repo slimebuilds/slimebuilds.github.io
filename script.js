@@ -163,3 +163,36 @@ function showTab(tab) {
   menuModal.style.justifyContent = 'center';
   menuModal.style.padding = '2rem';
 }
+
+const openContactModal = document.getElementById('openContactModal');
+const contactModal = document.getElementById('contactModal');
+const closeContactModal = document.getElementById('closeContactModal');
+
+// Open Contact Modal
+openContactModal.onclick = () => contactModal.style.display = 'flex';
+// Close Contact Modal
+closeContactModal.onclick = () => contactModal.style.display = 'none';
+// Close when clicking outside modal
+window.onclick = (e) => {
+  if (e.target == contactModal) contactModal.style.display = 'none';
+};
+
+// Copy to Clipboard
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => {
+//    alert(`Copied: ${text}`);
+  });
+}
+
+const contactNavLink = document.getElementById('contactNavLink');
+
+contactNavLink.onclick = (e) => {
+  e.preventDefault(); // Prevent default anchor behavior
+  contactModal.style.display = 'flex';
+};
+
+contactNavLink.onclick = () => {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  contactModal.style.display = 'flex';
+  navLinks.classList.remove('open');   // Close mobile nav menu
+};

@@ -55,15 +55,33 @@
       <div class="tab-content" id="tabContent"></div>
     </div>
   </div>
+	
+  <!-- Contact Modal -->
+	<div id="contactModal" class="modal">
+	  <div class="modal-content">
+		<span class="close" id="closeContactModal">&times;</span>
+		<h2 style="text-align:center; color: var(--light);">Find Us</h2>
+
+		<div class="mapimage">
+		  <img src="images/map.png" alt="Banchan Location" />
+		</div>
+		  
+		<!-- Phone Numbers -->
+		<div style="text-align: center; color: var(--light);">
+		  <p>
+			<strong>Call Us:</strong><br>
+			<span class="copy-text" onclick="copyText('8415678996')">📞 841-567-8996</span><br>
+			<strong>For catering, business inquiries, or employment opportunities call/text Harlow:</strong><br>
+			<span class="copy-text" onclick="copyText('8329337565')">📞 832-933-7565</span>
+		  </p>
+		</div>
+	  </div>
+	</div>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
-    <button onclick="window.location.href=''">Contact Us</button>
-    <div class="info">
-      <h3>Upcoming Events</h3>
-      <p>TBA</p>
-      <h3>Now Hiring!</h3>
-      <button onclick="window.location.href=''">Apply Here</button>
+	<button id="openContactModal">Contact Us</button>
+	<div class="info">
     </div>
   </section>
 
