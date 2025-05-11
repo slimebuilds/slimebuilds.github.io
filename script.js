@@ -85,8 +85,8 @@ function showTab(tab) {
         <p>$50</p>
       </div>
 	  <div class="food-item">
-        <a>Image coming soon!</a>
-        <h2>Kimichi Stew</h2>
+        <img src="images/menu/mains/kimichistew.png" alt="Kimchi Stew">
+        <h2>Kimchi Stew</h2>
 		<a>A hearty spicy stew made with pork, kimchi, green onion and bits of tofu in a savory pork stock.</a>
         <p>$50</p>
       </div>
@@ -97,13 +97,12 @@ function showTab(tab) {
         <p>$50</p>
       </div>
     `,
-	  //	  <img src="images/menu/mains/kimichistew.png" alt="Kimichi Stew">
 	sweets: `
       <div class="food-item">
-        <a>Image coming soon!</a>
+        <img src="images/menu/sweets/hotteok.png" alt="Hotteok">
         <h2>Hotteok</h2>
 		<a>Fluffy pancakes topped with a dollop of whipped butter and a sweet syrup drizzle.</a>
-        <p>$30</p>
+        <p>$50</p>
       </div>
 	  <div class="food-item">
         <img src="images/menu/sweets/bingsu.png" alt="Bingsu">
@@ -112,10 +111,10 @@ function showTab(tab) {
         <p>$30</p>
       </div>
     `,
-//	  <img src="images/menu/sweets/hotteok.png" alt="Hotteok">
+//	  
 	drinks: `
 	  <div class="food-item">
-        <a>Image coming soon!</a>
+        <img src="images/menu/drinks/yujatea.png" alt="Yuja Tea">
         <h2>Yuja Tea</h2>
 		<a>A traditional Korean tea made by mixing hot water with yuja marmalade.</a>
         <p>$25</p>
@@ -127,7 +126,7 @@ function showTab(tab) {
         <p>$25</p>
       </div>
 	  <div class="food-item">
-        <a>Image coming soon!</a>
+        <img src="images/menu/drinks/cherryblossommilkshake.png" alt="Cherry Blossom Milkshake">
         <h2>Cherry Blossom Milkshake</h2>
 		<a>A creamy milkshake made with soft serve vanilla ice cream that has been made in house, milk, and sweet cherries. Topped with whipped cream and little pieces of black cherries.</a>
         <p>$30</p>
@@ -135,7 +134,8 @@ function showTab(tab) {
 	  <div class="food-item">
         <img src="images/menu/drinks/hibiscus.png" alt="Hibiscus Herbal Tea with Blueberry Popping Boba">
         <h2>Hibiscus Herbal Tea with Blueberry Popping Boba</h2>
-		<a>Teaspoon of Boba. Floral bliss infused with blueberry popping boba for a delightful burst of fruity freshness in every sip.</a>
+		<h3>Teaspoon of Boba</h3>
+		<a>Floral bliss infused with blueberry popping boba for a delightful burst of fruity freshness in every sip.</a>
         <p>$25</p>
       </div>
 	  <div class="food-item">
@@ -145,7 +145,7 @@ function showTab(tab) {
         <p>$25</p>
       </div>
     `,
-//	  <img src="images/menu/drinks/yujatea.png" alt="Yuja Tea">
+//	  
 //	  <img src="images/menu/drinks/cherryblossommilkshake.png" alt="Cherry Blossom Milkshake">
 	alcohol: `
 	  <div class="food-item">
