@@ -141,7 +141,8 @@ function showTab(tab) {
 	  <div class="food-item">
         <img src="images/menu/drinks/taromilk.png" alt="Taro Milk Tea with Tapioca Pearls">
         <h2>Taro Milk Tea with Tapioca Pearls</h2>
-		<a>Teaspoon of Boba. Floral bliss infused with blueberry popping boba for a delightful burst of fruity freshness in every sip.</a>
+		<a>Floral bliss infused with blueberry popping boba for a delightful burst of fruity freshness in every sip.</a></br>
+		<a>(Teaspoon of Boba)</a>
         <p>$25</p>
       </div>
     `,
